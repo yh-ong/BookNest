@@ -1,1 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
+@import "bulma/sass/utilities/_all.sass";
+@import "bulma/sass/base/_all.sass";
+@import "bulma/sass/elements/_all.sass";
+@import "bulma/sass/form/_all.sass";
+@import "bulma/sass/components/_all.sass";
+@import "bulma/sass/grid/_all.sass";
+@import "bulma/sass/layout/_all.sass";
+@import "../src/assets/spacing.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background: #eff1f4;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.card {
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+  .card-image img {
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+// Loading CSS
+.loading-bar {
+  position: relative;
+  top: 50px;
+  width: 100%;
+
+  .bar {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+  }
+}
+
+// Alert
+.alert-message {
+  width: auto;
+  position: fixed;
+  box-shadow: 2px 5px 10px 5px rgb(0, 0, 0, 0.1);
+  right: 10px;
+  bottom: 15px;
+  z-index: 1;
+}
+
+.alert-404 {
+  text-align: center;
+  margin-top: 10%;
+}
+
+// mobile size
+@media only screen and (max-width: 768px) {
+  .container {
+    margin: 0 15px;
+  }
+}
+
+// tablet size
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
+  .container {
+    margin: 0 15px;
+  }
+}

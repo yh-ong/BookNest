@@ -1,0 +1,84 @@
+.book-image {
+    img {
+        border-radius: 10px;
+    }
+}
+
+.book-info {
+    margin-top: 10px;
+    p.title {
+        text-align: left;
+    }
+
+    .book-access {
+        margin-top: 35px;
+        a {
+            margin: 10px 0;
+        }
+    }
+}
+
+.book-list-info {
+    p span {
+        font-weight: 600;
+        margin-right: .3rem;
+    }
+}
+
+.book-detail {
+    p.book-desc {
+        text-align: justify;
+    }
+}
+
+.book-menu {
+    margin-bottom: 10px;
+}
+
+.is-hidden-tablet {
+    a {
+        margin-right: 5px;
+    }
+}
+
+.book-sales {
+    .sales-btn a {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 10px rgba(0,0,0,0.20);
+    }
+}
+
+.book-review {
+    margin-top: 3rem;
+
+    .review-form {
+        margin-bottom: 3rem;
+    }
+
+    .review-wrap {
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 10px;
+
+        .dates {
+            margin-left: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .book-wrap {
+        display: flex;
+        flex-direction:row;
+    }
+    
+    .book-image {
+        width: 50%;
+    }
+
+    .book-info {
+        width: 50%;
+        flex: 1 1 auto;
+        margin-left: 10px;
+    }
+
+}

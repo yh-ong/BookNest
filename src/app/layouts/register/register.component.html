@@ -1,0 +1,63 @@
+<div class="hero is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="title">
+                        <a routerLink="/home">BookNest</a>
+                    </h1>
+                    <h2 class="subtitle">
+                        Reading is the best
+                    </h2>
+                </div>
+                <div class="column">
+                    <div class="tabs is-toggle is-fullwidth">
+                        <ul>
+                            <li><a routerLink="/login">Login</a></li>
+                            <li class="is-active"><a routerLink="/register">Register</a></li>
+                        </ul>
+                    </div>
+                    <form novalidate [formGroup]="registerGroup" (ngSubmit)="registerSubmit()">
+                        <div class="field">
+                            <div class="control has-icons-left">
+                                <input class="input" formControlName="email" type="email" placeholder="Email">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <p class="help is-danger" *ngIf="formErrors.email">{{formErrors.email}}</p>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control has-icons-left">
+                                <input class="input" formControlName="password" type="password" placeholder="Password">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                                <p class="help is-danger" *ngIf="formErrors.password">{{formErrors.password}}</p>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control has-icons-left">
+                                <input class="input" formControlName="password" type="password" placeholder="Confirm Password">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                                <p class="help is-danger" *ngIf="formErrors.password">{{formErrors.password}}</p>
+                            </div>
+                        </div>
+                        <div class="field has-text-centered">
+                            <a routerLink="/login">Already have an account?</a>
+                        </div>
+                        <div class="field">
+                            <p class="control">
+                                <button type="submit" class="button is-fullwidth is-primary">
+                                    Regsiter
+                                </button>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

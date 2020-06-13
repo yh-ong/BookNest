@@ -1,0 +1,25 @@
+.book-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+
+    .book-img {
+        img {
+            border-radius: 10px;
+        }
+    }
+
+    .book-wrap {
+        width: 20%;
+        background-color: white;
+        border-radius: 10px;
+        padding: 1.2rem;
+        margin-left: 10px;
+        flex: 1;
+    }
+    
+    .book-footer {
+        position: relative;
+        margin-top: 2rem;
+    }
+}

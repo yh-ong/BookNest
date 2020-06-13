@@ -1,0 +1,17 @@
+// .book-list {
+//     display: flex;
+//     flex-wrap: wrap;
+
+//     .book-card {
+//         flex: 1 0 auto;
+//     }
+// }
+
+.book-list {
+    .book-card:hover {
+        z-index: 1;
+        transform: scale(1.02);
+        transition: all ease-in .2s;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+}

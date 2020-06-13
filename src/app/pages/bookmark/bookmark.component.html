@@ -1,0 +1,47 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="alert-404" [hidden]="bookmarkItems">
+        <img src="assets/images/notfound.png" width="250" />
+        <p class="title is-5">Oops... No Book Found</p>
+        <button class="button is-primary" routerLink="/home">Go Add Some Book</button>
+    </div>
+    <!-- <div class="loading-bar" [hidden]="bookmarkItems">
+        <div class="bar">
+            <h4>Loading...</h4>
+            <progress class="progress is-primary" max="100"></progress>
+        </div>
+    </div> -->
+
+    <div class="bookmark-wrap">
+        <div class="book-item" *ngFor="let item of bookmarkItems" [@expand]>
+            <div class="book-img">
+                <figure class="image">
+                    <img src={{item.bookImage}}>
+                </figure>
+            </div>
+            <div class="book-wrap">
+                <div class="book-info">
+                    <p class="title is-6">{{item.bookTitle}}</p>
+                    <p class="subtitle is-6">{{item.bookSubtitle}}</p>
+                </div>
+                <div class="book-footer">
+                    <p class="buttons">
+                        <button class="button is-danger is-light" (click)="removeBookmark(item.id)">
+                            <span class="icon is-small">
+                            <i class="fas fa-trash"></i>
+                            </span>
+                            <span>Delete</span>
+                        </button>
+                        <button class="button is-primary is-light" [routerLink]="['/bookdetail', item.bookID]" title={{item.bookTitle}}>
+                            <span class="icon is-small">
+                            <i class="fas fa-eye"></i>
+                            </span>
+                            <span>View</span>
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

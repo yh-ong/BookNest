@@ -1,0 +1,72 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="columns">
+        <div class="column is-3">
+            <div class="card search-box">
+                <div class="card-content">
+                    <form novalidate [formGroup]="searchGroup" (ngSubmit)="searchBook()" >
+                        <div class="field"> 
+                            <label class="label">Author</label>
+                            <div class="control">
+                                <input class="input" formControlName="author" type="text" placeholder="Author">
+                                <p class="help is-danger" *ngIf="formErrors.author">{{formErrors.author}}</p>
+                            </div>
+                        </div>
+                        <div class="field"> 
+                            <label class="label">Title</label>
+                            <div class="control">
+                                <input class="input" formControlName="title" type="text" placeholder="Title">
+                            </div>
+                        </div>
+                        <div class="field"> 
+                            <label class="label">ISBN</label>
+                            <div class="control">
+                                <input class="input" formControlName="isbn" type="text" placeholder="ISBN">
+                                <p class="help is-danger" *ngIf="formErrors.isbn">{{formErrors.isbn}}</p>
+                            </div>
+                        </div>
+    
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button type="submit" [disabled]="searchGroup.invalid" class="button is-link">Search</button>
+                            </div>
+                            <div class="control">
+                                <button type="reset" class="button is-link is-light">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="column is-9">
+            <div class="loading-bar" [hidden]="items">
+                <div class="bar">
+                    <h4>Loading...</h4>
+                    <progress class="progress is-primary" max="100"></progress>
+                </div>
+            </div>
+            <div class="book-list columns is-multiline">
+                <div class="column is-3" *ngFor="let item of items" [@expand]>
+                    <a [routerLink]="['/bookdetail', item.id]" title={{item.volumeInfo.title}}>
+                        <div class="card book-card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src={{item.volumeInfo.imageLinks.smallThumbnail}} alt={{item.volumeInfo.title}}>
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <p class="title is-6">{{item.volumeInfo.title | truncateText:20 }}</p>
+                                <p class="subtitle is-6">{{item.volumeInfo.authors | truncateText:1 }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+    
+            </div>
+        </div>
+
+    </div>
+</div>
